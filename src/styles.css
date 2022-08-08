@@ -1,0 +1,84 @@
+@keyframes transform {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  70% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  30% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.App {
+  height: 100vh;
+  font-family: sans-serif;
+  text-align: center;
+  display: flex;
+  font-size: 60px;
+  font-weight: 200;
+  align-items: center;
+  justify-content: center;
+  font-family: -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.wrapper {
+  display: flex;
+  background: red;
+  padding: 15px;
+  border-radius: 25px;
+  overflow: hidden;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  height: 60px;
+}
+
+.nextValue {
+  opacity: 0;
+  height: 60px;
+}
+
+.value {
+  opacity: 1;
+  height: 60px;
+}
+
+.isAnimating {
+  transform: translateY(-100%);
+  animation: transform 300ms 1 linear forwards;
+}
+
+.isAnimating .nextValue {
+  animation: fadeIn 300ms 1 linear forwards;
+}
+
+.isAnimating .value {
+  animation: fadeOut 300ms 1 linear forwards;
+}
